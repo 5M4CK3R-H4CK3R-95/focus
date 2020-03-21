@@ -1,0 +1,131 @@
+#!/usr/bin/python3
+from datetime import datetime
+import os
+import sys
+from time import sleep
+def permitions():
+	try:
+		print('')
+		print('')
+		print('* <---> Please Wait Giving Permitions To Your Kali ...... <---> *')
+		sleep(2)
+		os.system('ntfsfix /dev/sda1')
+		os.system('ntfsfix /dev/sda2')
+		os.system('ntfsfix /dev/sda3')
+		os.system('ntfsfix /dev/sda4')
+		os.system('ntfsfix /dev/sda5')
+		os.system('ntfsfix /dev/sda6')
+		os.system('clear')
+		print('')
+		print('* <---> NOTE : Please Donot Reboot To Window Reboot To Your Kali linux. <---> *')
+		input('* <---> All Permitions Are Given Press Enter To Restart ... <---> *')
+		os.system('reboot')
+		exit()
+	except KeyboardInterrupt:
+		print('')
+		print('You Press ctrl + c Please Wait for exit')
+		exit()
+	except Exception:
+		print('Sorry Can Not Understand Your Input Please Try Agan')
+		exit()
+def rm_password():
+	try:
+		if os.path.exists('Windows'):
+			print('Please Wait Running')
+			sleep(1)
+		else:
+			print('')
+			print('* <---> Please Open This File Only In Main Directory Of Where Your Window Is Installed like Normally The window Is Installed In Your Hard Disk C So Open It In there ... <---> *')
+			print('')
+			exit()
+
+		os.chdir('Windows/System32/config/')
+		if os.path.exists('SAM'):
+			print('Please Wait Checking Users Name That Exists In Window')
+		else:
+			print('Sorry Somthing Earror Has Occure')
+			exit()
+
+		os.system('chntpw -l SAM')
+		name = input('Please Enter The Name Of The User Name From Given Below : ')
+		print('')
+		os.system('clear')
+		print('Please Select The Options from Given Below')
+		print('After Chusing A Number Just Type Enter And Then Agan Type Enter Then Type Y and press enter to continue')
+		input('Press Enter If You Have Read All The Instructions ....')
+		os.system('chntpw -u ' + name + ' SAM')
+		print('Done Your Username Is Modified')
+		exit()
+	except KeyboardInterrupt:
+		print('')
+		print('You Press ctrl + c Please Wait for exit')
+		exit()
+	except Exception:
+		print('Sorry Can Not Understand Your Input Please Try Agan')
+		exit()
+def main():
+	try:
+		date = str(datetime.now().day) + "/" + str(datetime.now().month)
+		if date == '11/4':
+			sleep(1)
+			print('Sorry The Tool Is Expired Please Conntect To 5M4CK3R Here Is Whatsapp Group Link : ')
+			exit()
+		sleep(1)
+		print('''
+
+		-------------  ----------------   ------------   ----        ----   ------------
+		-------------  ----------------   ------------   ----        ----   ------------
+		----           ----        ----   ----           ----        ----   ----
+		----           ----        ----   ----           ----        ----   ----
+		---------      ----        ----   ----           ----        ----   ------------
+		---------      ----        ----   ----           ----        ----   ------------
+		----           ----        ----   ----           ----        ----           ----
+		----           ----        ----   ----           ----        ----           ----
+		----           ----------------   ------------   ----------------   ------------
+		----           ----------------   ------------   ----------------   ------------
+
+		Created By -> 5M4CKER 
+
+		''')
+		print('Please Chuse The Options From Given Below ....')
+		print('')
+		print('''
+1-> Give Permitions
+
+2-> Clear Windows Password or Other (change account type , change group , change password , etc)
+
+3 -> About Tool
+
+4 -> About Creater
+		
+5 -> Remove
+
+		''')
+		options = int(input('* 5M4CK3R * : '))
+		if options == 1:
+			sleep(1)
+			permitions()
+		elif options == 2:
+			sleep(1)
+			rm_password()
+		elif options == 3:
+			print('')
+			sleep(1)
+			print('This Tool Is Use To Work With Any Windows User Account It Can Clear Userpassword And It Can change account type and it can change group of your user account and also it can enable a disable user account and many more this tool is use to recover password of a useraccount of wondow if you have forgotten and this tool also gave a permitions for kali linux to windows to work on it but the conditions is that donot reboot to your window after giving permitions becouse some time when this tool give you a permitions you will reboot it to your system and your permitions of kali will denay but some time other wise it will not and also you need to open this tool only in your hard disk there where you have save your window like normally the window is saved in hard disk C so open this tool there Where is your hard disk c other wise it will give you an earror or you can only use permitions options while you are not in your window C directory Thats All Press Enter To Continue and restart it agan....')
+		elif options == 4:
+			sleep(1)
+			print('This Tool Is Created By 5M4CK3R If You Wont To Know More Please Connect to Them You Can Join Our Group Here Is Link : ')
+		elif options == 5:
+			sleep(1)
+			print('* Please Wait While Removing  Focus *')
+			os.system('rm -rf /usr/bin/focus')
+			print('File Is Removed')
+			exit()
+	except KeyboardInterrupt:
+		print('')
+		print('You Press ctrl + c Please Wait for exit')
+		exit()
+	except Exception:
+		print('Sorry Can Not Understand Your Input Please Try Agan')
+		exit()
+main()
