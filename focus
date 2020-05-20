@@ -18,7 +18,7 @@ def permitions():
 		os.system('clear')
 		print('')
 		print('* <---> NOTE : Please Donot Reboot To Window Reboot To Your Kali linux. <---> *')
-		input('* <---> All Permitions Are Given Press Enter To Restart ... <---> *')
+		input('* <---> All Permitions Are Given please WAit While restarting ... <---> *')
 		os.system('reboot')
 		exit()
 	except KeyboardInterrupt:
